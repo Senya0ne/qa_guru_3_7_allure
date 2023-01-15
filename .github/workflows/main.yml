@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-      - name: Install dependencies
+      - name: Launch tests
         run: |
           pytest --alluredir=allure-results
       - name: Get Allure history
