@@ -16,16 +16,12 @@ def test_github_issues_with_dry_selene():
 def test_github_issues_with_dynamic_steps():
     with allure.step('Открываем главную страницу'):
         browser.open('https:/github.com')
-
     with allure.step('Ищем репозиторий'):
         s('.header-search-input').send_keys('eroshenkoam/allure-example').press_enter()
-
     with allure.step('Переходим по ссылке репозитория'):
         s(by.link_text('eroshenkoam/allure-example')).click()
-
     with allure.step('Открываем таб issues'):
         s('#issues-tab').click()
-
     with allure.step('Проверяем наличие Issue с номером 76'):
         s(by.partial_text('#76')).should(be.visible)
 
