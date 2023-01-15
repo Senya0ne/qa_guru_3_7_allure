@@ -9,7 +9,7 @@ from selene.support.conditions import be
 @allure.link("https://github.com", name='Testing')
 @allure.story("Проверка нужного issue в табе Issues")
 @allure.severity(severity_level="critical")
-@allure.tag("web")
+@allure.tag("WEB")
 @allure.label("owner", "svasilchenko")
 class TestIssues:
     @allure.step('Открываем главную страницу')
