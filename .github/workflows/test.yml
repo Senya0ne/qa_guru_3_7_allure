@@ -3,7 +3,7 @@ name: Test
 on:
   push:
     branches:
-      - "master"
+      - "main"
 jobs:
   test:
     name: Test
@@ -13,11 +13,11 @@ jobs:
       - name: Set up Python 3.x
         uses: actions/setup-python@v2
         with:
-          python-version: '3.10'
+          python-version: '3.x'
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-      - name: Launch tests
+      - name: Install dependencies
         run: |
           pytest --alluredir=allure-results
       - name: Get Allure history
@@ -27,6 +27,7 @@ jobs:
         with:
           ref: gh-pages
           path: gh-pages
+
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
         if: always()
