@@ -37,9 +37,6 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-    - name: Generate Allure Report
-      steps:
-        - uses: actions/checkout@v2
 
     - name: Get Allure history
       if: always()
